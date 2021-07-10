@@ -173,5 +173,8 @@ def job(sender, **kwargs):
             else:
                 x.week_7 = '0'
         x.save()
+        # used to reset the RPi image table
+        Image.objects.all().delete()
+
 
 

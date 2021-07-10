@@ -58,3 +58,4 @@ virtualenv==20.2.2
 virtualenv-clone==0.5.4
 webencodings==0.5.1
 whitenoise==5.2.0
+opencv-python-headless==4.2.0.32

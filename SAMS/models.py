@@ -4,7 +4,7 @@ from account.models import Account
 
 
 class Student(models.Model):
-    email = models.ForeignKey(Account, to_field='email', db_column='email', on_delete=models.CASCADE)
+    email = models.ForeignKey(Account, to_field='email', db_column='email', on_delete=models.CASCADE,unique=True)
     Student_Name = models.CharField(max_length=30)
     Student_ID = models.CharField(max_length=12, unique=True, primary_key=True)
 

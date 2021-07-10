@@ -68,13 +68,13 @@ def job(sender, **kwargs):
             matchIndex = np.argmin(faceDis)
 
             if faceDis[matchIndex] < 0.50:
-                studentId = StudentTD[matchIndex].upper()
+                piStudentId = StudentTD[matchIndex].upper()
 
                 # prevent registering attendance for one student more than onetime
-                if studentId not in studentsIdWhoAttend:
+                if piStudentId not in studentsIdWhoAttend:
 
-                    print(studentId)
-                    print(type(studentId))
+                    print(piStudentId)
+                    print(type(piStudentId))
 
 
 
@@ -85,39 +85,93 @@ def job(sender, **kwargs):
                     minut = int(rasp_StdImage_date[15:18])
 
                     if houre >= 9 and houre < 15:
-                        studentsIdWhoAttend.append(studentId)
+                        studentsIdWhoAttend.append(piStudentId)
                         print("list of students how attend", studentsIdWhoAttend)
-                        x = CS1.objects.get(student_id=studentId)
-                        if x.week_1 != '1':
-                            x.week_1 = '1'
-                        elif x.week_2 != '1':
-                            x.week_2 = '1'
-                        elif x.week_3 != '1':
-                            x.week_3 = '1'
-                        elif x.week_4 != '1':
-                            x.week_4 = '1'
-                        elif x.week_5 != '1':
-                            x.week_5 = '1'
-                        elif x.week_6 != '1':
-                            x.week_6 = '1'
-                        else:
-                            x.week_7 = '1'
-                        x.save()
-                        print("attend save for: -",studentId )
 
 
+        #                 # x = CS1.objects.get(student_id=piStudentId)
+        #                 # if x.week_1 != '-1':
+        #                 #     if x.week_1 != '0':
+        #                 #         x.week_1 = '1'
+        #                 # elif x.week_2 != '1':
+        #                 #     x.week_2 = '1'
+        #                 # elif x.week_3 != '1':
+        #                 #     x.week_3 = '1'
+        #                 # elif x.week_4 != '1':
+        #                 #     x.week_4 = '1'
+        #                 # elif x.week_5 != '1':
+        #                 #     x.week_5 = '1'
+        #                 # elif x.week_6 != '1':
+        #                 #     x.week_6 = '1'
+        #                 # else:
+        #                 #     x.week_7 = '1'
+        #                 # x.save()
+        #                 # print("attend save for: -",piStudentId )
+        #
+        #
+        #
+        #         # elif houre >= 10.3  and houre < 12:
+        #         #     pass
+        #         # elif houre >= 12  and houre < 1.3:
+        #         #     pass
+        #         # elif houre >= 1.3 and houre < 15:
+        #         #     pass
+        #             else:
+        #                 print("====================")
+        #                 print("out of schedule time")
+        #                 print("====================")
+        #
+        #
+        #
+        # print("Final test ---------------")
 
-                # elif houre >= 10.3  and houre < 12:
-                #     pass
-                # elif houre >= 12  and houre < 1.3:
-                #     pass
-                # elif houre >= 1.3 and houre < 15:
-                #     pass
-                    else:
-                        print("====================")
-                        print("out of schedule time")
-                        print("====================")
+    for id in StudentTD:
+        x = CS1.objects.get(student_id=id)
+        # weeks = [x.week_1, x.week_2,x.week_3,x.week_4,x.week_5,x.week_6,x.week_7]
+        # global w
+        # for w in weeks:
+        #
+        #     if w == '-1':
+        #         if id in studentsIdWhoAttend:
+        #             w = '1'
+        #         else:
+        #             w = '0'
+
+        if x.week_1 == '-1':
+            if id in studentsIdWhoAttend:
+                x.week_1 = '1'
+            else:
+                x.week_1 = '0'
+        elif x.week_2 == '-1':
+            if id in studentsIdWhoAttend:
+                x.week_2 = '1'
+            else:
+                x.week_2 = '0'
+        elif x.week_3 == '-1':
+            if id in studentsIdWhoAttend:
+                x.week_3 = '1'
+            else:
+                x.week_3 = '0'
+        elif x.week_4 == '-1':
+            if id in studentsIdWhoAttend:
+                x.week_4 = '1'
+            else:
+                x.week_4 = '0'
+        elif x.week_5 == '-1':
+            if id in studentsIdWhoAttend:
+                x.week_5 = '1'
+            else:
+                x.week_5 = '0'
+        elif x.week_6 == '-1':
+            if id in studentsIdWhoAttend:
+                x.week_6 = '1'
+            else:
+                x.week_6 = '0'
+        elif x.week_7 == '-1':
+            if id in studentsIdWhoAttend:
+                x.week_7 = '1'
+            else:
+                x.week_7 = '0'
+        x.save()
 
 
-
-        print("Final test ---------------")

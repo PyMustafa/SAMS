@@ -51,13 +51,13 @@ class LectureSchedule(models.Model):
 
 class CS1(models.Model):
     student_id = models.CharField(max_length=50, default='0')
-    week_1 = models.CharField(max_length=10, default='0')
-    week_2 = models.CharField(max_length=10, default='0')
-    week_3 = models.CharField(max_length=10, default='0')
-    week_4 = models.CharField(max_length=10, default='0')
-    week_5 = models.CharField(max_length=10, default='0')
-    week_6 = models.CharField(max_length=10, default='0')
-    week_7 = models.CharField(max_length=10, default='0')
+    week_1 = models.CharField(max_length=10, default='-1')
+    week_2 = models.CharField(max_length=10, default='-1')
+    week_3 = models.CharField(max_length=10, default='-1')
+    week_4 = models.CharField(max_length=10, default='-1')
+    week_5 = models.CharField(max_length=10, default='-1')
+    week_6 = models.CharField(max_length=10, default='-1')
+    week_7 = models.CharField(max_length=10, default='-1')
 
     def __str__(self):
         return self.student_id

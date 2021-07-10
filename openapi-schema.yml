@@ -1,0 +1,566 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /api/update/{email}/:
+    get:
+      operationId: retrieveAccount
+      description: ''
+      parameters:
+      - name: email
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateAccount
+      description: ''
+      parameters:
+      - name: email
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Account'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Account'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Account'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateAccount
+      description: ''
+      parameters:
+      - name: email
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Account'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Account'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Account'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyAccount
+      description: ''
+      parameters:
+      - name: email
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/studentupdtedelete/{Student_ID}/:
+    get:
+      operationId: retrieveStudent
+      description: ''
+      parameters:
+      - name: Student_ID
+        in: path
+        required: true
+        description: A unique value identifying this student.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateStudent
+      description: ''
+      parameters:
+      - name: Student_ID
+        in: path
+        required: true
+        description: A unique value identifying this student.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Student'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Student'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateStudent
+      description: ''
+      parameters:
+      - name: Student_ID
+        in: path
+        required: true
+        description: A unique value identifying this student.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Student'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Student'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyStudent
+      description: ''
+      parameters:
+      - name: Student_ID
+        in: path
+        required: true
+        description: A unique value identifying this student.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/all_students/:
+    get:
+      operationId: listStudents
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Student'
+          description: ''
+      tags:
+      - api
+  /api/professordeleteupdate/{Name}/:
+    get:
+      operationId: retrieveProfessor
+      description: ''
+      parameters:
+      - name: Name
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Professor'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateProfessor
+      description: ''
+      parameters:
+      - name: Name
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Professor'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Professor'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Professor'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Professor'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateProfessor
+      description: ''
+      parameters:
+      - name: Name
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Professor'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Professor'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Professor'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Professor'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyProfessor
+      description: ''
+      parameters:
+      - name: Name
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/all_professors/:
+    get:
+      operationId: listProfessors
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Professor'
+          description: ''
+      tags:
+      - api
+  /api/PrepYearMaterials/:
+    get:
+      operationId: listPrepmaterials
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Material'
+          description: ''
+      tags:
+      - api
+  /api/PrepYearMaterialsupdatedelete/:
+    get:
+      operationId: retrievePrepmaterials
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Material'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updatePrepmaterials
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Material'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Material'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Material'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Material'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdatePrepmaterials
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Material'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Material'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Material'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Material'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyPrepmaterials
+      description: ''
+      parameters: []
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/accountcreate/:
+    post:
+      operationId: createAccount
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Account'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Account'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Account'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+          description: ''
+      tags:
+      - api
+  /api/studentcreate/:
+    post:
+      operationId: createStudent
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Student'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Student'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+          description: ''
+      tags:
+      - api
+  /api/professorcreate/:
+    post:
+      operationId: createProfessor
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Professor'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Professor'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Professor'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Professor'
+          description: ''
+      tags:
+      - api
+  /api/PrepYearMaterialsadd/:
+    post:
+      operationId: createPrepmaterials
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Material'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Material'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Material'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Material'
+          description: ''
+      tags:
+      - api
+components:
+  schemas:
+    Account:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          maxLength: 60
+        password:
+          type: string
+          maxLength: 128
+      required:
+      - email
+      - password
+    Student:
+      type: object
+      properties:
+        email:
+          type: string
+        Student_ID:
+          type: string
+          maxLength: 10
+        Student_Name:
+          type: string
+          maxLength: 50
+        PrepYear:
+          type: boolean
+      required:
+      - email
+      - Student_ID
+      - Student_Name
+    Professor:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        Name:
+          type: string
+          maxLength: 50
+        email:
+          type: string
+      required:
+      - Name
+      - email
+    Material:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        material:
+          type: string
+          maxLength: 30
+      required:
+      - material

@@ -12,7 +12,7 @@ from django.dispatch import receiver
 
 # pip install opencv-python
 
-@receiver(post_save, sender=Flag)
+@receiver(post_save, sender=Image)
 def job(sender, **kwargs):
     print("the job started ..............")
     images = []

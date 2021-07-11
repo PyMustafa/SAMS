@@ -43,7 +43,7 @@ class LecttureDetailslist(generics.ListAPIView):
 #     serializer_class = LectureDetailsserializer
 
 
-class CS1List(generics.CreateAPIView):
+class CS1List(generics.ListAPIView):
     queryset = CS1.objects.all()
     serializer_class = CS1Serializer
     # temp = Student.objects.values('Student_ID')

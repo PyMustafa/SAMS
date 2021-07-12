@@ -172,6 +172,11 @@ def job(sender, **kwargs):
                 x.week_7 = '1'
             else:
                 x.week_7 = '0'
+        elif x.week_8 == '-1':
+            if id in studentsIdWhoAttend:
+                x.week_8 = '1'
+            else:
+                x.week_8 = '0'
         x.save()
         # used to reset the RPi image table
         Image.objects.all().delete()

@@ -58,7 +58,7 @@ class CS1(models.Model):
     week_5 = models.CharField(max_length=10, default='-1')
     week_6 = models.CharField(max_length=10, default='-1')
     week_7 = models.CharField(max_length=10, default='-1')
-    week_8 = models.CharField(max_length=10, default='-1')
+    
 
     def __str__(self):
         return self.student_id
